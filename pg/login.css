@@ -1,0 +1,22 @@
+.container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        color: white;
+        margin-top: 15vh;
+        padding-bottom: 2.5vh;
+        background-color: rgba(255, 255, 255, 0.274);
+        box-shadow: 5px 5px 5px #747373;
+}
+
+/*.head {
+    color:blueviolet;
+    font-size: 2rem;
+}
+
+.input {
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    align-items: center;
+}*/
+
