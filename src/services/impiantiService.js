@@ -1,5 +1,5 @@
 const getImpianti = async () => {
-  const response = await fetch('/api/plants', {
+  const response = await fetch('', {
     headers: {
       'Authorization': `Bearer ${localStorage.getItem('token')}`,
     },

@@ -2,21 +2,35 @@ import "./login.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errore, setErrore] = useState('');
     const navigate = useNavigate();
 
- const check = (e) => {
+ const check = async (e) => {
     e.preventDefault();
         if(username === '' || password === '') { 
             setErrore('CAMPI VUOTI! Inserisci username e password');
-        } else {
-            setErrore('');
-            navigate('/dashboard');
-        }
+        } else { 
+            const response = await fetch('http://localhost:8000/login', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ "username" : username, "password": password }),
+              });
+            if(response.status === 200) {
+                setErrore('');
+                navigate('/dashboard');
+            } else {
+                setErrore('Credenziali errate!');
+            }
     }
+}
+
+    
     return (
 
         <div className="container">
